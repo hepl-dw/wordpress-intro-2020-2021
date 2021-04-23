@@ -8,5 +8,5 @@
 </head>
 <body>
     <header class="top">
-        <h1 class="top__title"><?= is_front_page() ? 'Bienvenue ici !' : wp_get_title(''); ?></h1>
+        <h1 class="top__title"><?= is_front_page() ? 'Bienvenue ici !' : trim(wp_title('', false)); ?></h1>
     </header>
