@@ -1,6 +1,14 @@
 <?php
 
 /* *****
+ * Return a compiled asset's URI
+ * *****/
+function dw_asset($path)
+{
+    return rtrim(get_template_directory_uri(), '/') . '/public/' . ltrim($path, '/');
+}
+
+/* *****
  * Disable the Wordpress Gutenberg Editor
  * *****/
 
