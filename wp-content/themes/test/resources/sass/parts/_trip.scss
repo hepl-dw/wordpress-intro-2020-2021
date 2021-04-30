@@ -1,0 +1,81 @@
+.trip {
+    position: relative;
+
+    &__card {
+        border: 1px solid white;
+        background: white;
+        border-radius: 4px;
+        padding: 2em;
+        transition: border 200ms ease-out;
+    }
+
+    &__link {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+
+        &:hover,
+        &:focus {
+            & + .trip__card {
+                border: 1px solid green;
+
+                .trip__title {
+                    color: green;
+                }
+
+                .trip__more {
+                    color: green;
+                    &:after {
+                        transform: translateX(4px);
+                    }
+                }
+            }
+        }
+    }
+
+    &__title {
+        font-size: 1.4em;
+        font-weight: bold;
+        margin-bottom: 1em;
+        color: #333;
+        transition: color 200ms ease-out;
+    }
+
+    &__info {
+        display: flex;
+    }
+
+    &__term {
+        width: 25%;
+        padding-right: 1em;
+    }
+
+    &__value {
+        width: 75%;
+    }
+
+    &__more {
+        display: block;
+        margin-top: 1em;
+        font-weight: bold;
+        transition: color 200ms ease-out;
+
+        &:after {
+            content: '>';
+            display: inline-block;
+            margin-left: 0.5em;
+            color: #121212;
+            transition: transform 200ms ease-out;
+        }
+    }
+
+    @media screen and (max-width: (1200 / 16 * 1em)) {
+        &__card {
+            background: pink;
+        }
+    }
+}
