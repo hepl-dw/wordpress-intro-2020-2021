@@ -25,6 +25,9 @@ function dw_custom_post_type() {
         'public' => true,
         'menu_position' => 5,
         'menu_icon' => 'dashicons-palmtree',
+        'rewrite' => [
+            'slug' => 'voyages'
+        ]
     ]);
 }
 
