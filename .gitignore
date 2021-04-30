@@ -5,6 +5,9 @@
 !/wp-content/themes
 /wp-content/themes/*
 !/wp-content/themes/test
+/wp-content/themes/test/public/*
 
 !.gitignore
 !README.md
+!package.json
+!webpack.mix.js
