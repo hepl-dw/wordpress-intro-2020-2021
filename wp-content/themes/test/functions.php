@@ -9,6 +9,26 @@ function dw_asset($path)
 }
 
 /* *****
+ * Register a custom post type
+ * *****/
+
+add_action('init', 'dw_custom_post_type');
+
+function dw_custom_post_type() {
+    register_post_type('trip', [
+        'label' => 'Voyages',
+        'labels' => [
+            'singular_name' => 'Voyage',
+            'add_new_item' => 'Ajouter un nouveau voyage',
+        ],
+        'description' => 'Tous les voyages que nous avons pu vivre jusqu\'à ce jour.',
+        'public' => true,
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-palmtree',
+    ]);
+}
+
+/* *****
  * Disable the Wordpress Gutenberg Editor
  * *****/
 
