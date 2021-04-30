@@ -1,0 +1,67 @@
+.languages {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    display: block;
+    width: 4em;
+    height: 2em;
+
+    &__current {
+        border-radius: 4px;
+        border: 1px solid #545454;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 101%;
+        line-height: 2em;
+    }
+
+    &__lang {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-indent: 0;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    &__list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 1em 0 0 0;
+        border-radius: 4px;
+        background: white;
+        border: 1px solid #dddddd;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-1em);
+        transition: transform 200ms ease-out, opacity 200ms ease-out, visibility 0ms 200ms linear;
+
+        .languages--visible & {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+            transition: transform 200ms ease-out, opacity 200ms ease-out;
+        }
+    }
+
+    &__item {
+        display: block;
+
+        & + & {
+            border-top: 1px solid #dddddd;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 4px;
+        text-align: center;
+    }
+}

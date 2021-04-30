@@ -15,4 +15,22 @@
 <body>
     <header class="top">
         <h1 class="top__title"><?= is_front_page() ? 'Bienvenue ici !' : trim(wp_title('', false)); ?></h1>
+
+        <nav class="top__language languages">
+            <h2 class="sro">Sélectionnez votre langue</h2>
+
+            <p class="languages__current">Vous êtes actuellement en : <strong class="languages__lang">FR</strong></p>
+
+            <ul class="languages__list">
+                <li class="languages__item">
+                    <a href="#TODO" class="languages__link">FR</a>
+                </li>
+                <li class="languages__item">
+                    <a href="#TODO" class="languages__link">NL</a>
+                </li>
+                <li class="languages__item">
+                    <a href="#TODO" class="languages__link">EN</a>
+                </li>
+            </ul>
+        </nav>
     </header>
