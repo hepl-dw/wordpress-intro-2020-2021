@@ -148,3 +148,13 @@ function dw_add_theme_supports()
 {
     add_theme_support('post-thumbnails', ['post', 'trip']);
 }
+
+/* *****
+ * Add custom thumbnail sizes
+ * *****/
+
+add_action('after_setup_theme', 'dw_add_image_sizes');
+
+function dw_add_image_sizes() {
+    add_image_size('trip-header', 1024, 312, true);
+}
