@@ -5,8 +5,9 @@
         border: 1px solid white;
         background: white;
         border-radius: 4px;
-        padding: 2em;
+        padding: 2em 2em 2em 12em;
         transition: border 200ms ease-out;
+        position: relative;
     }
 
     &__link {
@@ -34,6 +35,23 @@
                     }
                 }
             }
+        }
+    }
+
+    &__fig {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 10em;
+        height: 100%;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 

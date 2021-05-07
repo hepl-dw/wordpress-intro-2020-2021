@@ -26,14 +26,19 @@
                                 <span class="sro">En savoir plus sur "<?php the_title(); ?>"</span>
                             </a>
                             <div class="trip__card">
-                                <h3 class="trip__title"><?php the_title(); ?></h3>
-                                <dl class="trip__info">
-                                    <dt class="trip__term">Pays de destination&nbsp;:</dt>
-                                    <dd class="trip__value"><?php the_field('destination'); ?></dd>
-                                    <dt class="trip__term">Coût du voyage&nbsp;:</dt>
-                                    <dd class="trip__value"><?php the_field('costs'); ?></dd>
-                                </dl>
-                                <strong class="trip__more" aria-hidden="true">En savoir plus</strong>
+                                <div class="trip__content">
+                                    <h3 class="trip__title"><?php the_title(); ?></h3>
+                                    <dl class="trip__info">
+                                        <dt class="trip__term">Pays de destination&nbsp;:</dt>
+                                        <dd class="trip__value"><?php the_field('destination'); ?></dd>
+                                        <dt class="trip__term">Coût du voyage&nbsp;:</dt>
+                                        <dd class="trip__value"><?php the_field('costs'); ?></dd>
+                                    </dl>
+                                    <strong class="trip__more" aria-hidden="true">En savoir plus</strong>
+                                </div>
+                                <figure class="trip__fig">
+                                    <img <?= dw_the_thumbnail_attributes(['medium','medium_large']); ?> class="trip__img">
+                                </figure>
                             </div>
                         </article>
                     <?php endwhile; else: ?>
