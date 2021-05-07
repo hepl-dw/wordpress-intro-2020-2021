@@ -27,18 +27,15 @@
         <nav class="top__language languages">
             <h2 class="sro">Sélectionnez votre langue</h2>
 
-            <p class="languages__current">Vous êtes actuellement en : <strong class="languages__lang">FR</strong></p>
+            <p class="languages__current">Vous êtes actuellement en : <strong class="languages__lang"><?= dw_current_language()['slug']; ?></strong></p>
+
 
             <ul class="languages__list">
+                <?php foreach(dw_languages() as $lang): ?>
                 <li class="languages__item">
-                    <a href="#TODO" class="languages__link">FR</a>
+                    <a href="<?= $lang['url'] ?>" hreflang="<?= $lang['locale'] ?>" title="<?= $lang['name'] ?>" class="languages__link"><?= $lang['slug'] ?></a>
                 </li>
-                <li class="languages__item">
-                    <a href="#TODO" class="languages__link">NL</a>
-                </li>
-                <li class="languages__item">
-                    <a href="#TODO" class="languages__link">EN</a>
-                </li>
+                <?php endforeach; ?>
             </ul>
         </nav>
     </header>

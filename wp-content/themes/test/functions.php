@@ -1,6 +1,28 @@
 <?php
 
 /* *****
+ * Return the defined polylang languages
+ * *****/
+function dw_languages()
+{
+    return pll_the_languages([
+        'raw' => 1
+    ]);
+}
+
+/* *****
+ * Return the defined current polylang language
+ * *****/
+function dw_current_language()
+{
+    foreach (dw_languages() as $lang) {
+        if($lang['current_lang']) return $lang;
+    }
+
+    return null;
+}
+
+/* *****
  * Return the useful thumbnail attributes
  * *****/
 function dw_the_thumbnail_attributes($sizes = [])
