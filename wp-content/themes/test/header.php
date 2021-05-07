@@ -17,7 +17,7 @@
         <h1 class="top__title"><?= is_front_page() ? 'Bienvenue ici !' : trim(wp_title('', false)); ?></h1>
 
         <nav class="top__menu menu">
-            <h2 class="sro">Navigation principale</h2>
+            <h2 class="sro"><?= __('Navigation principale', 'dw'); ?></h2>
 
             <?php foreach(dw_menu('main') as $link): ?>
             <a href="<?= $link->url; ?>" class="menu__link <?= dw_bem('menu__link', $link->modifiers); ?>"><?= $link->label; ?></a>
@@ -25,9 +25,9 @@
         </nav>
 
         <nav class="top__language languages">
-            <h2 class="sro">Sélectionnez votre langue</h2>
+            <h2 class="sro"><?= __('Sélectionnez votre langue', 'dw'); ?></h2>
 
-            <p class="languages__current">Vous êtes actuellement en : <strong class="languages__lang"><?= dw_current_language()['slug']; ?></strong></p>
+            <p class="languages__current"><?= __('Vous êtes actuellement en', 'dw'); ?> : <strong class="languages__lang"><?= dw_current_language()['slug']; ?></strong></p>
 
 
             <ul class="languages__list">

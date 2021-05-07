@@ -180,3 +180,13 @@ add_action('after_setup_theme', 'dw_add_image_sizes');
 function dw_add_image_sizes() {
     add_image_size('trip-header', 1024, 312, true);
 }
+
+/* *****
+ * Load text domain
+ * *****/
+
+add_action('after_setup_theme', 'dw_load_textdomain');
+
+function dw_load_textdomain() {
+    load_textdomain('dw', get_stylesheet_directory() . '/lang/' . get_locale() . '.mo');
+}

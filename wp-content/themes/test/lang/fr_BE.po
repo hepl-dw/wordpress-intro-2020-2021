@@ -1,0 +1,44 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Traductions du thème de test\n"
+"POT-Creation-Date: 2021-05-07 12:14+0200\n"
+"PO-Revision-Date: 2021-05-07 12:14+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_BE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: front-page.php:6
+msgid "Ceci est le hero"
+msgstr "Ceci est le hero"
+
+#: front-page.php:12
+msgid "Mes derniers voyages"
+msgstr "Mes derniers voyages"
+
+#: front-page.php:26
+msgid "En savoir plus sur"
+msgstr "En savoir plus sur"
+
+#: front-page.php:37
+msgid "En savoir plus"
+msgstr "En savoir plus"
+
+#: header.php:20
+msgid "Navigation principale"
+msgstr "Navigation principale"
+
+#: header.php:28
+msgid "Sélectionnez votre langue"
+msgstr "Sélectionnez votre langue"
+
+#: header.php:30
+msgid "Vous êtes actuellement en"
+msgstr "Vous êtes actuellement en"
