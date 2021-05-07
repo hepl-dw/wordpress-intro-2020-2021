@@ -1,6 +1,59 @@
 <?php
 
 /* *****
+ * Return a menu structure for display
+ * *****/
+function dw_bem($base, $modifiers = [])
+{
+    $classes = array_map(function($modifier) use ($base) {
+        return $base . '--' . $modifier;
+    }, $modifiers);
+
+    return implode(' ', $classes);
+}
+
+/* *****
+ * Return a menu structure for display
+ * *****/
+function dw_menu($location)
+{
+    // 1. Récupérer l'identifiant (WP_post) de mon menu $location
+    $locations = get_nav_menu_locations();
+    $menu = $locations[$location];
+
+    // 2. Récupérer les liens (instances WP_Post) du menu en question
+    $links = wp_get_nav_menu_items($menu);
+
+    // 3. Formater les objets (liens) récupérés pour qu'ils soient utilisables
+    $links = array_map(function($result) {
+        // Récupérer l'objet de la page courante
+        global $post;
+
+        $link = new \stdClass();
+
+        $link->url = $result->url;
+        $link->label = $result->title;
+        $link->modifiers = [];
+
+        // Est-ce que le lien représente la page courante ?
+        if(intval($result->object_id) === intval($post->ID)) {
+            $link->modifiers[] = 'current';
+        }
+
+        // Est-ce que le lien possède une icone (ACF) à afficher ?
+        if($icon = get_field('icon', $result->ID)) {
+            $link->modifiers[] = $icon;
+        }
+
+        return $link;
+    }, $links);
+
+    // 4. Retourner le tableau ainsi créé
+    return $links;
+}
+
+
+/* *****
  * Return a compiled asset's URI
  * *****/
 function dw_asset($path)
@@ -28,6 +81,19 @@ function dw_custom_post_type() {
         'rewrite' => [
             'slug' => 'voyages'
         ]
+    ]);
+}
+
+/* *****
+ * Register navigation menus
+ * *****/
+
+add_action('init', 'dw_custom_navigation_menus');
+
+function dw_custom_navigation_menus() {
+    register_nav_menus([
+        'main' => 'Navigation principale',
+        'footer' => 'Navigation en pied de page',
     ]);
 }
 

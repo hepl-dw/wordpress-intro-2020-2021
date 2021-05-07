@@ -16,6 +16,14 @@
     <header class="top">
         <h1 class="top__title"><?= is_front_page() ? 'Bienvenue ici !' : trim(wp_title('', false)); ?></h1>
 
+        <nav class="top__menu menu">
+            <h2 class="sro">Navigation principale</h2>
+
+            <?php foreach(dw_menu('main') as $link): ?>
+            <a href="<?= $link->url; ?>" class="menu__link <?= dw_bem('menu__link', $link->modifiers); ?>"><?= $link->label; ?></a>
+            <?php endforeach; ?>
+        </nav>
+
         <nav class="top__language languages">
             <h2 class="sro">Sélectionnez votre langue</h2>
 
